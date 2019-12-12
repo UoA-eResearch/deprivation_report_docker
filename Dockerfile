@@ -1,6 +1,6 @@
 FROM rocker/geospatial:latest
 RUN apt-get update && apt-get install -y libprotobuf-dev protobuf-compiler libjq-dev
-RUN R -e "install.packages(c('highcharter', 'leaflet', 'shinycssloaders', 'shinyjs', 'tmap', 'leaflet.extras', 'plumber', 'uuid', 'curl', 'mailR', 'kableExtra', 'stringr', 'swfscMisc', 'sf', 'geosphere', 'rangeBuilder', 'rgeos', 'raster', 'mapview', 'tmap'), repos='https://cran.rstudio.com/');"
+RUN R -e "install.packages(c('highcharter', 'leaflet', 'shinycssloaders', 'shinyjs', 'leaflet.extras', 'plumber', 'uuid', 'curl', 'mailR', 'kableExtra', 'stringr', 'swfscMisc', 'sf', 'geosphere', 'rangeBuilder', 'rgeos', 'raster', 'mapview', 'rmapshaper'), repos='https://cran.rstudio.com/');"
 RUN R -e "install.packages('GAlogger', repos = 'http://www.datatailor.be/rcube', type = 'source');"
 RUN R -e "devtools::install_github('dkahle/ggmap');"
 RUN R -e "devtools::install_github('mtennekes/tmap');"
