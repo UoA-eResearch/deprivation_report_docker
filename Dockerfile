@@ -5,5 +5,7 @@ RUN R -e "install.packages('GAlogger', repos = 'http://www.datatailor.be/rcube',
 RUN R -e "devtools::install_github('dkahle/ggmap');"
 RUN R -e "devtools::install_github('mtennekes/tmap');"
 RUN R -e "devtools::install_github('tidyverse/ggplot2');"
+RUN R -e "devtools::install_github('rstudio/leaflet');"
+RUN R -e "devtools::install_github('neon-ninja/leaflet.extras');"
 RUN rocker_scripts/install_shiny_server.sh
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
