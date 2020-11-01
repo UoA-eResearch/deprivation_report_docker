@@ -7,5 +7,6 @@ RUN R -e "devtools::install_github('mtennekes/tmap');"
 RUN R -e "devtools::install_github('tidyverse/ggplot2');"
 RUN R -e "devtools::install_github('rstudio/leaflet');"
 RUN R -e "devtools::install_github('neon-ninja/leaflet.extras');"
+RUN R -e "devtools::install_github('Beachnad/mailR@patch');"
 RUN rocker_scripts/install_shiny_server.sh
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
