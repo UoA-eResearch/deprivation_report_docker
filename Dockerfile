@@ -8,5 +8,9 @@ RUN R -e "devtools::install_github('tidyverse/ggplot2');"
 RUN R -e "devtools::install_github('rstudio/leaflet');"
 RUN R -e "devtools::install_github('neon-ninja/leaflet.extras');"
 #RUN R -e "devtools::install_github('Beachnad/mailR@patch');"
+# phantomjs is required for webshot to snapshot htmlwidgets when knitting to PDF
+RUN R -e "webshot::install_phantomjs()"
+# This ENV var is required in order for webshot to function
+ENV OPENSSL_CONF="/etc/ssl"
 RUN rocker_scripts/install_shiny_server.sh
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
