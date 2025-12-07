@@ -1,6 +1,6 @@
 FROM rocker/geospatial:latest
 RUN apt-get update && apt-get install -y libprotobuf-dev protobuf-compiler libjq-dev default-jdk
-RUN R -e "options(Ncpus = 8); install.packages(c('mailR', 'rJava', 'progress', 'geojsonio', 'Orcs', 'highcharter', 'leaflet', 'shinycssloaders', 'shinyjs', 'leaflet.extras', 'plumber', 'uuid', 'curl', 'mailR', 'kableExtra', 'stringr', 'swfscMisc', 'sf', 'geosphere', 'rangeBuilder', 'rgeos', 'raster', 'mapview', 'rmapshaper', 'doParallel', 'rgdal', 'sp', 'RColorBrewer', 'htmltools', 'htmlwidgets', 'knitr', 'rmarkdown', 'GAlogger', 'tinytext', 'shiny'), repos='https://cran.rstudio.com/');"
+RUN R -e "options(Ncpus = 8); install.packages(c('tictoc', 'mailR', 'rJava', 'progress', 'geojsonio', 'Orcs', 'highcharter', 'leaflet', 'shinycssloaders', 'shinyjs', 'leaflet.extras', 'plumber', 'uuid', 'curl', 'mailR', 'kableExtra', 'stringr', 'swfscMisc', 'sf', 'geosphere', 'rangeBuilder', 'rgeos', 'raster', 'mapview', 'rmapshaper', 'doParallel', 'rgdal', 'sp', 'RColorBrewer', 'htmltools', 'htmlwidgets', 'knitr', 'rmarkdown', 'GAlogger', 'tinytext', 'shiny'), repos='https://cran.rstudio.com/');"
 RUN R CMD javareconf
 RUN R -e "install.packages('GAlogger', repos = 'http://www.datatailor.be/rcube', type = 'source');"
 RUN R -e "devtools::install_github('dkahle/ggmap');"
